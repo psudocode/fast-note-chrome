@@ -102,7 +102,7 @@ This project is licensed under the [MIT License](LICENSE).
 
 Here are some screenshots of the Fast Note Chrome Extension:
 
-![Screenshot 1](public/screenshots/idle.png)
-![Screenshot 2](public/screenshots/read.png)
-![Screenshot 3](public/screenshots/edit.png)
-![Screenshot 4](public/screenshots/create.png)
+<img src="public/screenshots/screenshot1.png" alt="Screenshot 1" width="200">
+<img src="public/screenshots/screenshot2.png" alt="Screenshot 2" width="200">
+<img src="public/screenshots/screenshot3.png" alt="Screenshot 3" width="200">
+<img src="public/screenshots/screenshot4.png" alt="Screenshot 4" width="200">
