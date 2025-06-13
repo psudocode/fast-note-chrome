@@ -97,3 +97,12 @@ This project is licensed under the [MIT License](LICENSE).
 
 - Built with ❤️ by Ahmad Awdiyanto at [Boojoog](https://boojoog.com).
 - Powered by modern web technologies.
+
+## Screenshots
+
+Here are some screenshots of the Fast Note Chrome Extension:
+
+![Screenshot 1](public/screenshots/idle.png)
+![Screenshot 2](public/screenshots/read.png)
+![Screenshot 3](public/screenshots/edit.png)
+![Screenshot 4](public/screenshots/create.png)
