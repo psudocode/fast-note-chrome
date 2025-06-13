@@ -1,0 +1,22 @@
+{
+  "name": "fast-note-chrome",
+  "description": "A Chrome extension for quickly taking notes",
+  "version": "1.0",
+  "manifest_version": 3,
+  "permissions": ["storage"],
+  "icons": {
+    "16": "favicon.png",
+    "32": "favicon.png",
+    "48": "favicon.png",
+    "128": "favicon.png"
+  },
+  "action": {
+    "default_popup": "index.html",
+    "default_icon": {
+      "16": "favicon.png",
+      "32": "favicon.png",
+      "48": "favicon.png",
+      "128": "favicon.png"
+    }
+  }
+}
