@@ -2,6 +2,8 @@
 
 Fast Note is a lightweight and efficient Chrome extension designed to help you quickly jot down and manage notes directly in your browser. With a clean and intuitive interface, Fast Note ensures that your ideas are always just a click away.
 
+![Fast Note Banner](public/screenshots/banner.png)
+
 ## Features
 
 - **Quick Note-Taking**: Create, edit, and delete notes effortlessly.
