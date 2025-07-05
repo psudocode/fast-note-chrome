@@ -25,6 +25,12 @@ jobs:
       - name: Build project
         run: npm run build
 
+      - name: Verify build output
+        run: |
+          echo "Checking if dist folder exists and contains files..."
+          ls -la dist/
+          echo "Build verification complete"
+
       - name: Create zip archive
         run: |
           cd dist
