@@ -1,0 +1,45 @@
+name: Build and Push to Release Branch
+
+on:
+  push:
+    tags:
+      - "v*"
+
+jobs:
+  build-and-release-branch:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '18'
+        cache: 'npm'
+        
+    - name: Install dependencies
+      run: npm ci
+      
+    - name: Build extension
+      run: npm run build
+      
+    - name: Create release branch
+      run: |
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        
+        # Create and switch to release branch
+        git checkout -b release/${{ github.ref_name }}
+        
+        # Remove dist from .gitignore temporarily
+        sed -i '/^dist$/d' .gitignore
+        
+        # Add dist folder to git
+        git add dist/
+        git add .gitignore
+        git commit -m "Add compiled extension for release ${{ github.ref_name }}"
+        
+        # Push the release branch
+        git push origin release/${{ github.ref_name }}
