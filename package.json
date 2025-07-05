@@ -35,6 +35,7 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
+    "build:release": "npm ci && npm run build",
     "lint": "eslint .",
     "preview": "vite preview"
   },
