@@ -7,6 +7,8 @@ on:
 
 permissions:
   contents: write
+  actions: read
+  packages: write
 
 jobs:
   release:
@@ -47,33 +49,28 @@ jobs:
           sha256sum fast-note-chrome-${{ github.ref_name }}.zip > fast-note-chrome-${{ github.ref_name }}.zip.sha256
 
       - name: Create release and upload assets
-        uses: softprops/action-gh-release@v1
-        with:
-          files: |
-            fast-note-chrome-${{ github.ref_name }}.zip
-            fast-note-chrome-${{ github.ref_name }}.zip.sha256
-          tag_name: ${{ github.ref_name }}
-          name: Release ${{ github.ref_name }}
-          draft: false
-          prerelease: false
-          body: |
-            ## Changes
-            
-            Please see the commit history for detailed changes.
-            
-            ## Installation
-            
-            1. Download the `fast-note-chrome-${{ github.ref_name }}.zip` file
-            2. Extract the contents
-            3. Open Chrome and go to `chrome://extensions/`
-            4. Enable "Developer mode"
-            5. Click "Load unpacked" and select the extracted folder
-            
-            ## Verification
-            
-            You can verify the integrity of the download using the SHA256 checksum:
-            ```
-            sha256sum fast-note-chrome-${{ github.ref_name }}.zip
-            ```
+        run: |
+          gh release create ${{ github.ref_name }} \
+            fast-note-chrome-${{ github.ref_name }}.zip \
+            fast-note-chrome-${{ github.ref_name }}.zip.sha256 \
+            --title "Release ${{ github.ref_name }}" \
+            --notes "## Changes
+          
+          Please see the commit history for detailed changes.
+          
+          ## Installation
+          
+          1. Download the \`fast-note-chrome-${{ github.ref_name }}.zip\` file
+          2. Extract the contents
+          3. Open Chrome and go to \`chrome://extensions/\`
+          4. Enable \"Developer mode\"
+          5. Click \"Load unpacked\" and select the extracted folder
+          
+          ## Verification
+          
+          You can verify the integrity of the download using the SHA256 checksum:
+          \`\`\`
+          sha256sum fast-note-chrome-${{ github.ref_name }}.zip
+          \`\`\`"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
