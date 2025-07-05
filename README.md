@@ -14,6 +14,18 @@ Fast Note is a lightweight and efficient Chrome extension designed to help you q
 
 ## Installation
 
+### Option 1: Download from GitHub Releases (Recommended)
+
+1. Go to the [Releases page](https://github.com/psudocode/fast-note-chrome/releases)
+2. Download the latest `fast-note-chrome-v*.zip` file
+3. Extract the zip file to a folder on your computer
+4. Load the extension in Chrome:
+   - Open Chrome and navigate to `chrome://extensions/`
+   - Enable "Developer mode" in the top-right corner
+   - Click "Load unpacked" and select the extracted folder
+
+### Option 2: Build from Source
+
 1. Clone this repository:
    ```bash
    git clone https://github.com/psudocode/fast-note-chrome.git
